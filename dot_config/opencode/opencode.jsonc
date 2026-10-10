@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  
+  // CLI起動時にデフォルトで使用されるモデルを指定します
+  "model": "google/gemini-1.5-flash",
+
+  "providers": {
+    // ------------------------------------
+    // ローカルLLM (Ollama) の設定
+    // ------------------------------------
+    "ollama": {
+      "settings": {
+        // コンテナ内部からホストOS(リモートサーバー)で動いているOllamaに接続するためのURL
+        // ※Docker Desktop環境 (Mac/Windows) の場合
+        "baseURL": "http://host.docker.internal:11434"
+        
+        // ※ピュアなLinuxホストの場合は、以下のURLにするかホストのIPを指定します
+        // "baseURL": "http://172.17.0.1:11434"
+      }
+    }
+  }
+}
+
